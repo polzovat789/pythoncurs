@@ -33,7 +33,7 @@ f = " ".join(e)
 print(f)
 my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(my_list)
-my_list.insert(2,15 )
+my_list.insert(2, 15)
 print(my_list)
 removed_element = my_list.pop(6)
 print(my_list)
