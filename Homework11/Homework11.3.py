@@ -3,7 +3,8 @@ def typed(type_):
         def wrapper(*args, **kwargs):
             # Конвертируем аргументы
             converted_args = [type_(arg) for arg in args]
-            converted_kwargs = {key: type_(value) for key, value in kwargs.items()}
+            converted_kwargs = {
+                key: type_(value) for key, value in kwargs.items()}
 
             # Вызываем функцию с аргументами
             result = func(*converted_args, **converted_kwargs)
