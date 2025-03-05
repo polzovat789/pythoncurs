@@ -13,15 +13,22 @@ class Book:
         """Резервирование книги."""
         if self.is_borrowed:
             print(
-                f"Книга '{self.book_name}' уже выдана. Невозможно зарезервировать.")
+                f"Книга '{self.book_name}' уже выдана. "
+                "Невозможно зарезервировать."
+            )
+
         elif self.is_reserved:
             print(
-                f"Книга '{self.book_name}' уже зарезервирована. Невозможно зарезервировать.")
+                f"Книга '{self.book_name}' уже зарезервирована. "
+                "Невозможно зарезервировать."
+            )
+
         else:
             self.is_reserved = True
             self.reserved_by = reader
             print(
-                f"Книга '{self.book_name}' зарезервирована для {reader.name}.")
+                f"Книга '{self.book_name}' зарезервирована для {reader.name}."
+            )
 
     def cancel_reserve(self, reader):
         """Отмена резервации книги."""
@@ -29,35 +36,46 @@ class Book:
             self.is_reserved = False
             self.reserved_by = None
             print(
-                f"Резервация книги '{self.book_name}' отменена для {reader.name}.")
+                f"Резервация книги '{self.book_name}' отменена для {reader.name}."
+            )
         else:
-            print(f"Резервация книги '{self.book_name}'"
-                  f" не может быть отменена для {reader.name}.")
+            print(
+                f"Резервация книги '{self.book_name}' не может быть отменена "
+                f"для {reader.name}."
+            )
 
     def get_book(self, reader):
         """Выдача книги."""
         if self.is_borrowed:
-            print(f"Книга '{self.book_name}' уже выдана. Невозможно выдать.")
+            print(
+                f"Книга '{self.book_name}' уже выдана. Невозможно выдать."
+            )
         elif self.is_reserved and self.reserved_by != reader:
-            print(f"Книга '{self.book_name}'"
-                  f" зарезервирована другим пользователем. Невозможно выдать.")
+            print(
+                f"Книга '{self.book_name}' зарезервирована другим пользователем. "
+                "Невозможно выдать."
+            )
         else:
             self.is_borrowed = True
             self.borrowed_by = reader
             self.is_reserved = False  # Снимаем резервацию при выдаче
             self.reserved_by = None
-            print(f"Книга '{self.book_name}' выдана {reader.name}.")
+            print(
+                f"Книга '{self.book_name}' выдана {reader.name}."
+            )
 
     def return_book(self, reader):
         """Возврат книги."""
         if self.is_borrowed and self.borrowed_by == reader:
             self.is_borrowed = False
             self.borrowed_by = None
-            print(f"Книга '{self.book_name}' "
-                  f"возвращена {reader.name}.")
+            print(
+                f"Книга '{self.book_name}' возвращена {reader.name}."
+            )
         else:
-            print(f"Книга '{self.book_name}'"
-                  f" не может быть возвращена {reader.name}.")
+            print(
+                f"Книга '{self.book_name}' не может быть возвращена {reader.name}."
+            )
 
 
 class Reader:
@@ -88,7 +106,6 @@ book = Book(
     num_pages=400,
     isbn="0006754023"
 )
-
 
 vasya = Reader("Vasya")
 petya = Reader("Petya")

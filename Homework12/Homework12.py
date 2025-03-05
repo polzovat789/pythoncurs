@@ -1,5 +1,3 @@
-import math
-
 
 class Bank:
     def __init__(self):
@@ -64,4 +62,6 @@ assert bank.calc_deposit_interest_rate(client_id=client_id) == 1104.71, \
 
 # Закрытие вклада и получение денег
 final_amount = bank.close_deposit(client_id=client_id)
-print(f"Итоговая сумма вклада: {final_amount} рублей")
+print(
+    f"Итоговая сумма вклада: {final_amount} рублей"
+)
