@@ -8,7 +8,7 @@ def validate_arguments(func):
         for key, value in kwargs.items():
             if not isinstance(value, (int, float)) or value <= 0:
                 raise ValueError(
-                    f"Аргумент {key}={value} не является положительным числом!")
+                    f"Аргумент {key}={value} не является положительным числом")
 
         return func(*args, **kwargs)
 
