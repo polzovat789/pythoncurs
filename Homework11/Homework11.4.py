@@ -13,12 +13,14 @@ def cache(func):
 
     return wrapper
 
+
 # Пример использования декоратора @cache
 @cache
 def fibonacci(n):
     if n <= 1:
         return n
     return fibonacci(n - 1) + fibonacci(n - 2)
+
 
 # Вызов функции и использование кэширования
 print(fibonacci(5))  # Вывод: 5 (рассчитывается, результат сохраняется)

@@ -10,10 +10,12 @@ def validate_arguments(func):
         return func(*args, **kwargs)
     return wrapper
 
+
 # Пример функции с декоратором validate_arguments
 @validate_arguments
 def add_numbers(a, b):
     return a + b
+
 
 # Вызовы функции с положительными аргументами
 print(add_numbers(5, 10))  # Вывод: 15
