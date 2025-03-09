@@ -1,13 +1,31 @@
-def validate_return_type(func):
+# Декоратор для проверки, что результат функции является числом
+def validate_result(func):
     def wrapper(*args, **kwargs):
-        # Вызов
+        # Выполнение функции и получение результата
         result = func(*args, **kwargs)
 
-        # Проверка
+        # Проверка, что результат является числом (int или float)
         if not isinstance(result, (int, float)):
-            print(f"Ошибка: результат {result} не является числом")
+            print("Ошибка: Результат функции не является числом!")
         else:
-            # Если результат корректен, возвращаем его
             return result
 
     return wrapper
+
+
+# Пример функции с декоратором validate_result
+@validate_result
+def multiply(a, b):
+    return a * b  # Эта функция возвращает число
+
+
+@validate_result
+def greet(name):
+    return f"Hello, {name}!"  # Эта функция возвращает строку, не число
+
+
+# Вызов функции, результат которой является числом
+print(multiply(2, 3))  # Вывод: 6
+
+# Вызов функции, результат которой не является числом
+print(greet("Alice"))  # Вывод: Ошибка: Результат функции не является числом!
