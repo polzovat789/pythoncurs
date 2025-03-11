@@ -41,13 +41,15 @@ vasya = Person('USD', 10)
 petya = Person('EUR', 5)
 
 # Конвертация в BYN
-assert converter.exchange_currency(vasya.currency, vasya.amount) == (32.69, "BYN"), "Ошибка конвертации для Васи"
-assert converter.exchange_currency(petya.currency, petya.amount) == (35.2, "BYN"), "Ошибка конвертации для Пети"
+assert (converter.exchange_currency(vasya.currency, vasya.amount)
+        == (32.69, "BYN")), "Ошибка конвертации для Васи"
+assert (converter.exchange_currency(petya.currency, petya.amount)
+        == (35.2, "BYN")), "Ошибка конвертации для Пети"
 
 # Конвертация в заданную валюту
-assert converter.exchange_currency(vasya.currency, vasya.amount, 'EUR') == (
-9.29, "EUR"), "Ошибка конвертации для Васи в EUR"
-assert converter.exchange_currency(petya.currency, petya.amount, 'USD') == (
-10.76, "USD"), "Ошибка конвертации для Пети в USD"
+assert (converter.exchange_currency(vasya.currency, vasya.amount, 'EUR')
+        == (9.29, "EUR")), "Ошибка конвертации для Васи в EUR"
+assert (converter.exchange_currency(petya.currency, petya.amount, 'USD')
+        == (10.76, "USD")), "Ошибка конвертации для Пети в USD"
 
 print("Все тесты пройдены успешно!")
