@@ -1,4 +1,4 @@
-# Создаем файл students.txt, если его нет
+# Создаем файл students.txt, если его нету
 try:
     with open('students.txt', 'x') as f:
         students = [
@@ -18,17 +18,15 @@ try:
         students_data = f.readlines()
         total_students = len(students_data)
         groups = {}
-
-        # Подсчитываем количество студентов и среднюю оценку по группам
         for line in students_data:
             name, group, grade = line.strip().split()
-            grade = int(grade)
+            # grade должен быть целым числом, поэтому преобразуем его
+            grade = int(grade)  # Преобразуем строку в целое число
             if group not in groups:
                 groups[group] = {"count": 0, "sum": 0}
             groups[group]["count"] += 1
-            groups[group]["sum"] += grade
+            groups[group]["sum"] += grade  # Суммируем оценки как числа
 
-        # Выводим результаты
         print(f"Общее количество студентов: {total_students}")
         for group, data in groups.items():
             avg_grade = data["sum"] / data["count"]
