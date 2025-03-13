@@ -20,6 +20,7 @@ try:
         groups = {}
         for line in students_data:
             name, group, grade = line.strip().split()
+            # grade должен быть целым числом, поэтому преобразуем его
             grade = int(grade)  # Преобразуем строку в целое число
             if group not in groups:
                 groups[group] = {"count": 0, "sum": 0}
