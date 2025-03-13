@@ -20,7 +20,7 @@ try:
         groups = {}
         for line in students_data:
             name, group, grade = line.strip().split()
-            grade = int(grade)
+            grade = int(grade)  # Преобразуем grade в int
             if group not in groups:
                 groups[group] = {"count": 0, "sum": 0}
             groups[group]["count"] += 1
