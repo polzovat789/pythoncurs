@@ -19,12 +19,13 @@ try:
         total_students = len(students_data)
         groups = {}
         for line in students_data:
+            # Разбиваем строку на части
             name, group, grade = line.strip().split()
-            grade = int(grade)  # Преобразуем grade в int
+            grade = int(grade)  # Преобразуем grade в целое число
             if group not in groups:
                 groups[group] = {"count": 0, "sum": 0}
             groups[group]["count"] += 1
-            groups[group]["sum"] += grade
+            groups[group]["sum"] += grade  # Суммируем оценки
 
         print(f"Общее количество студентов: {total_students}")
         for group, data in groups.items():
