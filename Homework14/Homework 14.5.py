@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 
+
 # Чтение XML и вычисление общей стоимости
 def calculate_total_cost(xml_file):
     tree = ET.parse(xml_file)
@@ -10,6 +11,7 @@ def calculate_total_cost(xml_file):
         quantity = int(product.find('quantity').text)
         total_cost += price * quantity
     return total_cost
+
 
 try:
     print(f"Общая стоимость товаров: {calculate_total_cost('products.xml')}")

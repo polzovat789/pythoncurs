@@ -10,7 +10,7 @@ try:
         for student in students:
             f.write(f'{student[0]} {student[1]} {student[2]}\n')
 except FileExistsError:
-    pass
+    pass  # Файл уже существует, не делаем ничего
 
 # Открываем файл для чтения и анализа
 try:
@@ -39,5 +39,6 @@ try:
                 avg_grade = data["sum"] / data["count"]
                 f_append.write(f"Группа {group}: {data['count']} студентов, "
                                f"средняя оценка {avg_grade:.2f}\n")
+
 except FileNotFoundError:
     print("Файл не найден!")
