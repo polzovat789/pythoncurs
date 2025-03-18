@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 # Enum для статусов заказа
 class OrderStatus(Enum):
     PENDING = "Заказ ожидает обработки"
@@ -7,6 +8,7 @@ class OrderStatus(Enum):
     READY = "Заказ готов"
     COMPLETED = "Заказ выдан"
     CANCELLED = "Заказ отменён"
+
 
 # Класс заказа
 class Order:
@@ -22,6 +24,7 @@ class Order:
 
     def display_status(self):
         print(f"Статус заказа {self.order_id}: {self.status.value}")
+
 
 # Пример использования
 order = Order(order_id=123)

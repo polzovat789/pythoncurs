@@ -2,6 +2,7 @@ import logging
 from logging.handlers import TimedRotatingFileHandler
 import os
 
+
 # Настройка логирования
 def setup_logger():
     # Создаем каталог для логов, если он не существует
@@ -36,6 +37,7 @@ def setup_logger():
 
     return logger
 
+
 # Функция для записи действия пользователя в лог
 def log_user_action(logger, action, level=logging.INFO):
     if level == logging.INFO:
@@ -46,6 +48,7 @@ def log_user_action(logger, action, level=logging.INFO):
         logger.warning(action)
     else:
         logger.debug(action)
+
 
 # Пример работы программы
 if __name__ == "__main__":

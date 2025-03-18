@@ -1,5 +1,4 @@
 from datetime import datetime
-from dateutil.relativedelta import relativedelta
 
 # Запрашиваем даты у пользователя
 date_format = "%Y-%m-%d"
